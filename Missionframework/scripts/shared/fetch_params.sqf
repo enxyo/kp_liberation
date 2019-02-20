@@ -26,6 +26,7 @@ if(isServer) then {
 		diag_log "[KP LIBERATION] ACE Medical detected. Deactivating BI Revive System."
 	} else {
 		GET_PARAM(bis_reviveParam_mode, "ReviveMode", 1);
+		diag_log "[KP LIBERATION] ACE Medical not detected!"
 	};
 
 	GET_PARAM(bis_reviveParam_duration, "ReviveDuration", 6);
