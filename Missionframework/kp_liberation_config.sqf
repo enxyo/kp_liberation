@@ -155,7 +155,6 @@ blacklisted_from_arsenal = [
 
 // Items which should be added as allowed Items, when they get blacklisted, even if they are not in the blacklisted_from_arsenal array
 KP_liberation_allowed_items_extension = [
-	"ItemRadioAcreFlagged",
 	"rhs_acc_ekp8_18b",
 	"rhs_acc_ekp8_18c",
 	"rhs_acc_ekp8_18d",
@@ -202,7 +201,7 @@ KP_liberation_allowed_items_extension = [
 	"ACE_launch_NLAW_Used_F",
 	"rhs_weap_mk18_grip2_KAC_d",
     "tf_anprc152_5",
-    "tf_anprc152",
+    "tf_anprc152"
 ];
 
 /* - Configuration settings for crates transported by vehicles.
