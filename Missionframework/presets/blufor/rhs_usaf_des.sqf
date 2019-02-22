@@ -141,7 +141,7 @@ static_vehicles = [
 	["RHS_TOW_TriPod_D",50,100,0],										//TOW (AT)
 	["RHS_Stinger_AA_pod_D",50,100,0],									//Stinger (AA)
 	["RHS_M252_D",80,150,0],											//Mk6 Mortar
-	["RHS_M119_D",100,200,0].											//M119A2
+	["RHS_M119_D",100,200,0],											//M119A2
 	["B_SAM_System_02_F",500,500,250],									//MK21 Centurion
 	["B_SAM_System_01_F",300,700,150],									//Mk49 Spartan
 	["B_AAA_System_01_F",500,800,50]									//Praetorian 1C
