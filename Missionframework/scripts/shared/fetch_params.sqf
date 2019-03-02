@@ -37,14 +37,14 @@ if(isServer) then {
 	GET_PARAM(bis_reviveParam_bleedOutDuration, "ReviveBleedOutDuration", 180);
 	GET_PARAM(bis_reviveParam_forceRespawnDuration, "ReviveForceRespawnDuration", 10);
 
-	GET_PARAM(GRLIB_difficulty_modifier, "Difficulty", 2);
+	GET_PARAM(GRLIB_difficulty_modifier, "Difficulty", 5);
 	GET_PARAM(GRLIB_time_factor, "DayDuration", 12);
 	GET_PARAM(GRLIB_resources_multiplier, "ResourcesMultiplier", 3);
 	GET_PARAM(GRLIB_unitcap, "Unitcap", 2);
-	GET_PARAM(GRLIB_civilian_activity, "civilians", 1);
+	GET_PARAM(GRLIB_civilian_activity, "civilians", 2);
 	GET_PARAM(GRLIB_halo_param, "HaloJump", 1);
 	GET_PARAM(GRLIB_cleanup_vehicles, "CleanupVehicles", 2);
-	GET_PARAM(GRLIB_csat_aggressivity, "Aggressivity", 2);
+	GET_PARAM(GRLIB_csat_aggressivity, "Aggressivity", 3);
 	GET_PARAM(GRLIB_weather_param, "Weather", 3);
 	GET_PARAM(GRLIB_maximum_fobs, "MaximumFobs", 26);
 	GET_PARAM(GRLIB_max_squad_size, "MaxSquadSize", 10);
