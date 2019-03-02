@@ -87,6 +87,7 @@ if(isServer) then {
 		case 5: {GRLIB_unitcap = 2;};
 		default {GRLIB_unitcap = 1;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_unitcap: %1", GRLIB_unitcap];
 
 	switch (GRLIB_difficulty_modifier) do {
 		case 0: {GRLIB_difficulty_modifier = 0.5;};
@@ -99,6 +100,7 @@ if(isServer) then {
 		case 7: {GRLIB_difficulty_modifier = 10;};
 		default {GRLIB_difficulty_modifier = 2;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_difficulty_modifier: %1", GRLIB_difficulty_modifier];
 
 	switch (GRLIB_csat_aggressivity) do {
 		case 0: {GRLIB_csat_aggressivity = 0.25;};
@@ -108,14 +110,16 @@ if(isServer) then {
 		case 4: {GRLIB_csat_aggressivity = 4;};
 		default {GRLIB_csat_aggressivity = 2;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_csat_aggressivity: %1", GRLIB_csat_aggressivity];
 
 	switch (GRLIB_civilian_activity) do {
 		case 0: {GRLIB_civilian_activity = 0;};
 		case 1: {GRLIB_civilian_activity = 0.5;};
 		case 2: {GRLIB_civilian_activity = 1;};
 		case 3: {GRLIB_civilian_activity = 2;};
-		default {GRLIB_csat_aggressivity = 1;};
+		default {GRLIB_civilian_activity = 1;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_civilian_activity: %1", GRLIB_civilian_activity];
 
 	switch (GRLIB_resources_multiplier) do {
 		case 0: {GRLIB_resources_multiplier = 0.25;};
@@ -128,6 +132,7 @@ if(isServer) then {
 		case 7: {GRLIB_resources_multiplier = 3;};
 		default {GRLIB_resources_multiplier = 1;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_resources_multiplier: %1", GRLIB_resources_multiplier];
 
 	KP_serverParamsFetched = true;
 	publicVariable "KP_serverParamsFetched";
