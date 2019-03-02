@@ -97,7 +97,7 @@ if(isServer) then {
 		case 5: {GRLIB_difficulty_modifier = 2;};
 		case 6: {GRLIB_difficulty_modifier = 4;};
 		case 7: {GRLIB_difficulty_modifier = 10;};
-		default {GRLIB_difficulty_modifier = 1;};
+		default {GRLIB_difficulty_modifier = 2;};
 	};
 
 	switch (GRLIB_csat_aggressivity) do {
@@ -106,7 +106,7 @@ if(isServer) then {
 		case 2: {GRLIB_csat_aggressivity = 1;};
 		case 3: {GRLIB_csat_aggressivity = 2;};
 		case 4: {GRLIB_csat_aggressivity = 4;};
-		default {GRLIB_csat_aggressivity = 1;};
+		default {GRLIB_csat_aggressivity = 2;};
 	};
 
 	switch (GRLIB_civilian_activity) do {
