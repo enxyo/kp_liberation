@@ -140,7 +140,7 @@ static_vehicles = [
 	["RHS_MK19_TriPod_D",25,60,0],										//Mk19 GMG 20mm
 	["RHS_TOW_TriPod_D",50,100,0],										//TOW (AT)
 	["RHS_Stinger_AA_pod_D",50,100,0],									//Stinger (AA)
-	["RHS_M252_D",80,150,0],											//Mk6 Mortar
+	["rhsgref_ins_2b14",80,150,0],											//Mk6 Mortar
 	["RHS_M119_D",100,200,0],											//M119A2
 	["B_SAM_System_02_F",500,500,250],									//MK21 Centurion
 	["B_SAM_System_01_F",300,700,150],									//Mk49 Spartan
@@ -241,6 +241,9 @@ support_vehicles = [
 	["ACE_Box_82mm_Mo_HE",50,40,0],
 	["ACE_Box_82mm_Mo_Smoke",50,10,0],
 	["ACE_Box_82mm_Mo_Illum",50,10,0],
+	["rhsusf_mags_crate",0,20,0],
+	["rhsusf_launcher_crate",0,20,0],
+	["Box_NATO_AmmoOrd_F",0,20,0],
 	["ACE_Wheel",10,0,0],
 	["ACE_Track",10,0,0],
 	["B_APC_Tracked_01_CRV_F",500,250,350],								//CRV-6e Bobcat
