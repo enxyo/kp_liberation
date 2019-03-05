@@ -6,9 +6,9 @@ _bg_groups = [];
 last_battlegroup_size = 0;
 _spawn_marker = "";
 if ( count _this == 1 ) then {
-	_spawn_marker = [ 2000, 10000, false, _this select 0 ] call F_findOpforSpawnPoint;
+	_spawn_marker = [ 4000, 10000, false, _this select 0 ] call F_findOpforSpawnPoint;
 } else {
-	_spawn_marker = [ 2000, 10000, false ] call F_findOpforSpawnPoint;
+	_spawn_marker = [ 4000, 10000, false ] call F_findOpforSpawnPoint;
 };
 
 
@@ -26,13 +26,13 @@ if ( _spawn_marker != "" ) then {
 	if ( _target_size >= 16 ) then { _target_size = 16; };
 	if ( combat_readiness < 60 ) then { _target_size = round (_target_size * 0.65) };
 	while { count _selected_opfor_battlegroup < _target_size } do {
-		_selected_opfor_battlegroup pushback (_vehicle_pool call BIS_fnc_selectRandom);
+		_selected_opfor_battlegroup pushback (selectRandom _vehicle_pool);
 	};
 
 	[_spawn_marker] remoteExec ["remote_call_battlegroup"];
 
 	{
-		_nextgrp = createGroup GRLIB_side_enemy;
+		_nextgrp = createGroup [GRLIB_side_enemy, true];
 		_vehicle = [markerpos _spawn_marker, _x] call F_libSpawnVehicle;
 		sleep 0.5;
 		(crew _vehicle) joinSilent _nextgrp;
@@ -66,5 +66,3 @@ if ( _spawn_marker != "" ) then {
 
 	} foreach _bg_groups;
 };
-
-
