@@ -26,6 +26,7 @@ if(isServer) then {
 		diag_log "[KP LIBERATION] ACE Medical detected. Deactivating BI Revive System."
 	} else {
 		GET_PARAM(bis_reviveParam_mode, "ReviveMode", 1);
+		diag_log "[KP LIBERATION] ACE Medical not detected!"
 	};
 
 	GET_PARAM(bis_reviveParam_duration, "ReviveDuration", 6);
@@ -36,14 +37,14 @@ if(isServer) then {
 	GET_PARAM(bis_reviveParam_bleedOutDuration, "ReviveBleedOutDuration", 180);
 	GET_PARAM(bis_reviveParam_forceRespawnDuration, "ReviveForceRespawnDuration", 10);
 
-	GET_PARAM(GRLIB_difficulty_modifier, "Difficulty", 2);
+	GET_PARAM(GRLIB_difficulty_modifier, "Difficulty", 5);
 	GET_PARAM(GRLIB_time_factor, "DayDuration", 12);
 	GET_PARAM(GRLIB_resources_multiplier, "ResourcesMultiplier", 3);
 	GET_PARAM(GRLIB_unitcap, "Unitcap", 2);
-	GET_PARAM(GRLIB_civilian_activity, "civilians", 1);
+	GET_PARAM(GRLIB_civilian_activity, "civilians", 2);
 	GET_PARAM(GRLIB_halo_param, "HaloJump", 1);
 	GET_PARAM(GRLIB_cleanup_vehicles, "CleanupVehicles", 2);
-	GET_PARAM(GRLIB_csat_aggressivity, "Aggressivity", 2);
+	GET_PARAM(GRLIB_csat_aggressivity, "Aggressivity", 3);
 	GET_PARAM(GRLIB_weather_param, "Weather", 3);
 	GET_PARAM(GRLIB_maximum_fobs, "MaximumFobs", 26);
 	GET_PARAM(GRLIB_max_squad_size, "MaxSquadSize", 10);
@@ -86,6 +87,7 @@ if(isServer) then {
 		case 5: {GRLIB_unitcap = 2;};
 		default {GRLIB_unitcap = 1;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_unitcap: %1", GRLIB_unitcap];
 
 	switch (GRLIB_difficulty_modifier) do {
 		case 0: {GRLIB_difficulty_modifier = 0.5;};
@@ -96,8 +98,9 @@ if(isServer) then {
 		case 5: {GRLIB_difficulty_modifier = 2;};
 		case 6: {GRLIB_difficulty_modifier = 4;};
 		case 7: {GRLIB_difficulty_modifier = 10;};
-		default {GRLIB_difficulty_modifier = 1;};
+		default {GRLIB_difficulty_modifier = 2;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_difficulty_modifier: %1", GRLIB_difficulty_modifier];
 
 	switch (GRLIB_csat_aggressivity) do {
 		case 0: {GRLIB_csat_aggressivity = 0.25;};
@@ -105,16 +108,18 @@ if(isServer) then {
 		case 2: {GRLIB_csat_aggressivity = 1;};
 		case 3: {GRLIB_csat_aggressivity = 2;};
 		case 4: {GRLIB_csat_aggressivity = 4;};
-		default {GRLIB_csat_aggressivity = 1;};
+		default {GRLIB_csat_aggressivity = 2;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_csat_aggressivity: %1", GRLIB_csat_aggressivity];
 
 	switch (GRLIB_civilian_activity) do {
 		case 0: {GRLIB_civilian_activity = 0;};
 		case 1: {GRLIB_civilian_activity = 0.5;};
 		case 2: {GRLIB_civilian_activity = 1;};
 		case 3: {GRLIB_civilian_activity = 2;};
-		default {GRLIB_csat_aggressivity = 1;};
+		default {GRLIB_civilian_activity = 1;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_civilian_activity: %1", GRLIB_civilian_activity];
 
 	switch (GRLIB_resources_multiplier) do {
 		case 0: {GRLIB_resources_multiplier = 0.25;};
@@ -127,6 +132,7 @@ if(isServer) then {
 		case 7: {GRLIB_resources_multiplier = 3;};
 		default {GRLIB_resources_multiplier = 1;};
 	};
+	diag_log format ["[KP LIBERATION] GRLIB_resources_multiplier: %1", GRLIB_resources_multiplier];
 
 	KP_serverParamsFetched = true;
 	publicVariable "KP_serverParamsFetched";

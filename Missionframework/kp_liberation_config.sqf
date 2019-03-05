@@ -25,10 +25,13 @@ KP_liberation_ace_crates = [
 	"ACE_Box_82mm_Mo_HE",
 	"ACE_Box_82mm_Mo_Smoke",
 	"ACE_Box_82mm_Mo_Illum",
-	"ACE_medicalSupplyCrate_advanced"
+	"ACE_medicalSupplyCrate_advanced",
+	"rhsusf_mags_crate",
+	"rhsusf_launcher_crate",
+	"Box_NATO_AmmoOrd_F"
 ];
 
-/* - Custom unit and arsenal preset settings. 
+/* - Custom unit and arsenal preset settings.
 If you want to change a preset, it's recommended to set all four presets to 0 and edit the appropriate custom.sqf files in the preset folders.*/
 
 /* BLUFOR preset:
@@ -41,7 +44,7 @@ If you want to change a preset, it's recommended to set all four presets to 0 an
 6 = RHS USAF (Woodland)
 7 = RHS USAF (Desert)
 8 = RHS AFRF (VDV/MSV) */
-KP_liberation_preset_blufor = 0;
+KP_liberation_preset_blufor = 7;
 
 /* OPFOR preset:
 0 = Custom (default vanilla CSAT)
@@ -50,7 +53,7 @@ KP_liberation_preset_blufor = 0;
 3 = Project OPFOR (Takistan)
 4 = Project OPFOR (Islamic State)
 5 = Project OPFOR (Sahrani) */
-KP_liberation_preset_opfor = 0;
+KP_liberation_preset_opfor = 2;
 
 /* Resistance preset:
 0 = Custom (default vanilla FIA)
@@ -58,7 +61,7 @@ KP_liberation_preset_opfor = 0;
 2 = RHS GREF
 3 = Project OPFOR (Middle Eastern)
 4 = Project OPFOR (Sahrani) */
-KP_liberation_preset_resistance = 0;
+KP_liberation_preset_resistance = 2;
 
 /* Civilians preset:
 0 = Custom (default vanilla)
@@ -73,9 +76,9 @@ KP_liberation_preset_civilians = 0;
 2 = Killah Potatoes Gaming Community arsenal preset.
 3 = RHS USAF arsenal preset.
 4 = RHS USAF arsenal preset with ACE.
-5 = RHS USAF arsenal preset with ACE and ACRE.	
+5 = RHS USAF arsenal preset with ACE and ACRE.
 6 = 3cbBAF and RHS USAF arsenal preset. */
-KP_liberation_arsenal = 0;
+KP_liberation_arsenal = 1;
 
 /* - Fuel consumption settings.
 Time in minutes till a full tank depletes whilst the vehicle is standing still with a running engine.	*/
@@ -110,8 +113,8 @@ GRLIB_sector_size = 1000;																						// Range to activate a sector.
 GRLIB_capture_size = 175;																						// Range to capture a sector.
 GRLIB_defended_buildingpos_part = 0.4;																			// Multiplier for defenders in buildings.
 GRLIB_battlegroup_size = 6							* (sqrt GRLIB_unitcap) * (sqrt GRLIB_csat_aggressivity);	// Size of enemy battlegroups.
-GRLIB_vulnerability_timer = 1200;																				// Time in seconds how long a captured sector is vulnerable to enemy troops.
-GRLIB_radiotower_size = 2500;																					// Radio Tower scanning range.
+GRLIB_vulnerability_timer = 900;																				// Time in seconds how long a captured sector is vulnerable to enemy troops.
+GRLIB_radiotower_size = 5000;																					// Radio Tower scanning range.
 GRLIB_surrender_chance = 80;																					// Chance that enemy infantry will surrender after heavy losses are encountered.
 
 GRLIB_civilians_amount = 10 						* GRLIB_civilian_activity;									// Civilian count multiplier.
@@ -126,9 +129,9 @@ KP_liberation_cr_kill_penalty = 5;																				// Civil Reputation penalt
 KP_liberation_cr_building_penalty = 3;																			// Civil Reputation penalty for destroying/damaging a building.
 KP_liberation_cr_vehicle_penalty = 2;																			// Civil Reputation penalty for stealing a civilian vehicle.
 KP_liberation_cr_resistance_penalty = 3;																		// Civil Reputation penalty for killing a friendly resistance soldier.
-KP_liberation_cr_sector_gain = 5;																				// Civil Reputation gain for liberate a sector.
-KP_liberation_cr_wounded_chance = 35;																			// Chance (0-100) that there are wounded civilians right after capturing a sector.
-KP_liberation_cr_wounded_gain = 2;																				// Civil Reputation gain for providing medical assistance for wounded civilians.
+KP_liberation_cr_sector_gain = 8;																				// Civil Reputation gain for liberate a sector.
+KP_liberation_cr_wounded_chance = 66;																			// Chance (0-100) that there are wounded civilians right after capturing a sector.
+KP_liberation_cr_wounded_gain = 3;																				// Civil Reputation gain for providing medical assistance for wounded civilians.
 
 KP_liberation_civinfo_min = 5400;																				// Civil Informant minimum spawn time. (seconds)
 KP_liberation_civinfo_max = 10800;																				// Civil Informant maximum spawn time. (seconds)
@@ -148,105 +151,13 @@ KP_liberation_resistance_sector_chance = 35;																	// Chance that a gu
 KP_liberation_resistance_ambush_chance = 25;																	// Chance that some guerilla units will spawn in blufor sectors for an ambush, if reputation is low.
 
 /* - Default arsenal blacklist method.
-Useless if you're using anything other than "kp_liberation_arsenal = 0;" above. A whitelisted arsenal is always more performance friendly then a blacklisted arsenal.	
+Useless if you're using anything other than "kp_liberation_arsenal = 0;" above. A whitelisted arsenal is always more performance friendly then a blacklisted arsenal.
 REMEMBER: All static turret and UAV bags should be defined here, to stop players from exploiting free resources via the virtual arsenal.	*/
 blacklisted_from_arsenal = [
-	"I_HMG_01_weapon_F",
-	"B_HMG_01_weapon_F",
-	"O_HMG_01_weapon_F",
-	"I_HMG_01_A_weapon_F",
-	"B_HMG_01_A_weapon_F",
-	"O_HMG_01_A_weapon_F",
-	"I_HMG_01_high_weapon_F",
-	"B_HMG_01_high_weapon_F",
-	"O_HMG_01_high_weapon_F",
-	"I_GMG_01_weapon_F",
-	"B_GMG_01_weapon_F",
-	"O_GMG_01_weapon_F",
-	"I_GMG_01_A_weapon_F",
-	"B_GMG_01_A_weapon_F",
-	"O_GMG_01_A_weapon_F",
-	"I_GMG_01_high_weapon_F",
-	"B_GMG_01_high_weapon_F",
-	"O_GMG_01_high_weapon_F",
-	"I_Mortar_01_support_F",
-	"B_Mortar_01_support_F",
-	"O_Mortar_01_support_F",
-	"I_Mortar_01_weapon_F",
-	"B_Mortar_01_weapon_F",
-	"O_Mortar_01_weapon_F",
-	"I_HMG_01_support_F",
-	"B_HMG_01_support_F",
-	"O_HMG_01_support_F",
-	"I_HMG_01_support_high_F",
-	"B_HMG_01_support_high_F",
-	"O_HMG_01_support_high_F",
-	"I_AA_01_weapon_F",
-	"B_AA_01_weapon_F",
-	"O_AA_01_weapon_F",
-	"I_AT_01_weapon_F",
-	"B_AT_01_weapon_F",
-	"O_AT_01_weapon_F",
-	"I_UAV_01_backpack_F",
-	"B_UAV_01_backpack_F",
-	"O_UAV_01_backpack_F",
-	"I_UAV_06_backpack_F",
-	"B_UAV_06_backpack_F",
-	"O_UAV_06_backpack_F",
-	"I_UAV_06_medical_backpack_F",
-	"B_UAV_06_medical_backpack_F",
-	"O_UAV_06_medical_backpack_F",
-	"C_UAV_06_backpack_F",
-	"C_UAV_06_medical_backpack_F",
-	"C_IDAP_UAV_01_backpack_F",
-	"C_IDAP_UAV_06_backpack_F",
-	"C_IDAP_UAV_06_medical_backpack_F",
-	"C_IDAP_UAV_06_antimine_backpack_F",
-	"B_Respawn_Sleeping_bag_blue_F",
-	"B_Respawn_Sleeping_bag_brown_F",
-	"B_Respawn_TentDome_F",
-	"B_Respawn_Sleeping_bag_F",
-	"B_Respawn_TentA_F",
-	"RHS_M2_Gun_Bag",
-	"RHS_M2_Tripod_Bag",
-	"rhs_M252_Gun_Bag",
-	"rhs_M252_Bipod_Bag",
-	"RHS_M2_MiniTripod_Bag",
-	"RHS_Mk19_Gun_Bag",
-	"RHS_Mk19_Tripod_Bag",
-	"rhs_Tow_Gun_Bag",
-	"rhs_TOW_Tripod_Bag",
-	"RHS_Podnos_Bipod_Bag",
-	"RHS_Podnos_Gun_Bag",
-	"RHS_Metis_Gun_Bag",
-	"RHS_Metis_Tripod_Bag",
-	"RHS_Kornet_Gun_Bag",
-	"RHS_Kornet_Tripod_Bag",
-	"RHS_AGS30_Tripod_Bag",
-	"RHS_AGS30_Gun_Bag",
-	"RHS_DShkM_Gun_Bag",
-	"RHS_DShkM_TripodHigh_Bag",
-	"RHS_DShkM_TripodLow_Bag",
-	"RHS_Kord_Tripod_Bag",
-	"RHS_Kord_Gun_Bag",
-	"RHS_NSV_Tripod_Bag",
-	"RHS_NSV_Gun_Bag",
-	"RHS_SPG9_Gun_Bag",
-	"RHS_SPG9_Tripod_Bag",
-	"UK3CB_BAF_L16",
-	"UK3CB_BAF_L16_Tripod",
-	"UK3CB_BAF_M6",
-	"UK3CB_BAF_L111A1",
-	"UK3CB_BAF_L134A1",
-	"UK3CB_BAF_Tripod",
-	"optic_Nightstalker",
-	"optic_tws",
-	"optic_tws_mg"
 ];
 
 // Items which should be added as allowed Items, when they get blacklisted, even if they are not in the blacklisted_from_arsenal array
 KP_liberation_allowed_items_extension = [
-	"ItemRadioAcreFlagged",
 	"rhs_acc_ekp8_18b",
 	"rhs_acc_ekp8_18c",
 	"rhs_acc_ekp8_18d",
@@ -290,7 +201,10 @@ KP_liberation_allowed_items_extension = [
 	"ACE_Chemlight_Shield_Green",
 	"ACE_Chemlight_Shield_Red",
 	"ACE_ReserveParachute",
-	"ACE_launch_NLAW_Used_F"
+	"ACE_launch_NLAW_Used_F",
+	"rhs_weap_mk18_grip2_KAC_d",
+    "tf_anprc152_5",
+    "tf_anprc152"
 ];
 
 /* - Configuration settings for crates transported by vehicles.
